@@ -6,7 +6,8 @@ class PageInfo:
 class Header:
     title = ".app_logo"
     burger = ".bm-burger-button"
-    shop_chart = "#shopping_cart_container"
+    item_cart = "#shopping_cart_container"
+    item_chart_count = ".shopping_cart_badge"
 
 
 class SubHeader:
@@ -20,16 +21,11 @@ class SubHeader:
         price_desc = "option[value='hilo']"
 
 
-class MainForm:
-    user_name = "#user-name"
-    password = "#password"
-    login_btn = "#login-button"
-
-
-class FormInfo:
-    user_form = "#login_credentials"
-    user_header = "div[id='login_credentials'] h4"
-
-    pass_form = ".login_password"
-    pass_header = "div[class='login_password'] h4"
-
+class Products:
+    container = "//div[@class='inventory_item']"
+    thumbnail = "//img[@class='inventory_item_img']"
+    name = "//a[contains(@id, 'title_link')]"
+    info = "//div[@class='inventory_item_desc']"
+    price = "//div[@class='inventory_item_price']"
+    add_btn = "//button[contains(@id,'add')]"
+    remove_btn = "//button[contains(@id,'remove')]"
