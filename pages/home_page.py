@@ -1,5 +1,6 @@
 from pages.__base import BasePage
 from elements.__home import *
+from elements.__inventory import PageInfo as Invent
 from playwright.async_api import Page, expect
 
 
@@ -74,26 +75,7 @@ class HomePage(BasePage):
         await self._look(FormInfo.pass_form)
         await expect(self._find(FormInfo.pass_form)).to_contain_text("secret_sauce")
 
-
-    # async def sort_control_presence(self):
-    #     await self._look(JobSort.control)
-    #     await expect(self._find(JobSort.control)).to_be_visible()
-    #
-    # async def email_presence(self):
-    #     await self._look(DataDiri.Initial.email_label)
-    #     await expect(self._find(DataDiri.Initial.email_label)).to_have_text("Email")
-    #
-    #     await self._touch(DataDiri.Initial.email_input)
-    #     await expect(self._find(DataDiri.Initial.email_input)).to_be_empty()
-    #     await expect(self._find(DataDiri.Initial.email_input)).to_have_attribute("placeholder", "johndoe@gmail.com")
-    #
-    #
-    # async def sort_item_presence(self):
-    #     for item in JobSort.options:
-    #         await self._look(JobSort.control_expanded)
-    #         await expect(self._find(JobSort.control_expanded)).to_be_visible()
-    #
-    #         await self._look(JobSort.options[item])
-    #         await expect(self._find(JobSort.options[item])).to_be_visible()
-    #         await self._click(JobSort.options[item])
-    #         await self.sort_control_click()
+    """Login Success Validation"""
+    async def login_attempt_success(self):
+        await expect(self.page).to_have_url(Invent.url)
+        await expect(self._find(Invent.main_display)).to_be_visible()
