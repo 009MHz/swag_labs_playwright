@@ -1,5 +1,5 @@
-from pages.home_page import HomePage
-from playwright.async_api import Page, expect, async_playwright
+from pages.home_page.home_page import HomePage
+from playwright.async_api import Page
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
