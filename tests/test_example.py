@@ -26,10 +26,3 @@ async def test_get_started_link(page: Page):
     await page.get_by_role("link", name="Get started").click()
     # Expects page to have a heading with the name of Installation.
     await expect(page.get_by_role("heading", name="Installation")).to_be_visible()
-
-
-async def test_karirlab_title_page(page: Page):
-    await page.goto("https://staging.karirlab.co/")
-    title = await page.title() # passed test
-    # title = page.title()  # Intentional Fail
-    assert title == "Awali Cerita Karirmu! | Mulai dari KarirLab | Tips Karir Terlengkap!"

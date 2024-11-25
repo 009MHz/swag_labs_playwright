@@ -47,7 +47,7 @@ class Config:
         self.page = await context.new_page()
         return self.page
 
-    async def setup_auth_page(self, auth_mode: str):
+    async def user_mode(self, auth_mode: str):
         context = await self.context_init(storage_state=True, user_type=auth_mode)
         self.page = await context.new_page()
         return self.page

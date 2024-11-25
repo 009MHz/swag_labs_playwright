@@ -43,7 +43,7 @@ async def page(browser):
 
 @pytest.fixture()
 async def user_auth(browser):
-    page_instance = await runner.setup_auth_page("user")
+    page_instance = await runner.user_mode("standard")
     yield page_instance
     await runner.capture_handler()
     await page_instance.close()
@@ -51,7 +51,7 @@ async def user_auth(browser):
 
 @pytest.fixture()
 async def admin_auth(browser):
-    page_instance = await runner.setup_auth_page("admin")
+    page_instance = await runner.user_mode("admin")
     yield page_instance
     await runner.capture_handler()
     await page_instance.close()
@@ -59,7 +59,7 @@ async def admin_auth(browser):
 
 @pytest.fixture()
 async def super_auth(browser):
-    page_instance = await runner.setup_auth_page("super_admin")
+    page_instance = await runner.user_mode("super_admin")
     yield page_instance
     await runner.capture_handler()
     await page_instance.close()
