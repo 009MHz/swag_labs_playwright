@@ -27,7 +27,7 @@ class TestCheckoutItemMatch:
         with allure.step("1. Verify the item chart presence on default state"):
             await invent.cart_empty_presence()
         with allure.step("2. Click Add to cart button "):
-            await invent.click_random_add_to_chart(attempt)
+            await invent.click_ordered_add_to_chart(attempt)
         with allure.step("3. Verify the chart state after item added"):
             await invent.cart_item_added_presence()
             await invent.cart_item_counter(attempt)
@@ -41,7 +41,7 @@ class TestCheckoutItemMatch:
         with allure.step("1. Verify the item chart presence on default state"):
             await invent.cart_empty_presence()
         with allure.step("2. Click Add to cart button "):
-            await invent.click_random_add_to_chart(attempt)
+            await invent.click_ordered_add_to_chart(attempt)
         with allure.step("3. Verify the chart state after item added"):
             await invent.cart_item_added_presence()
             await invent.cart_item_counter(attempt)
@@ -55,7 +55,7 @@ class TestCheckoutItemMatch:
         with allure.step("1. Verify the item chart presence on default state"):
             await invent.cart_empty_presence()
         with allure.step("2. Click Add to cart button"):
-            await invent.click_random_add_to_chart(attempt)
+            await invent.click_ordered_add_to_chart(attempt)
         with allure.step("3. Verify the chart state after item added"):
             await invent.cart_item_added_presence()
             await invent.cart_item_counter(attempt)

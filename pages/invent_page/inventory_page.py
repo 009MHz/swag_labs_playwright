@@ -1,3 +1,5 @@
+import time
+
 from pages.__base import BasePage
 from elements.__inventory import *
 from playwright.async_api import Page, expect
@@ -26,6 +28,11 @@ class InventPage(BasePage):
     async def _item_pick(self, locator, index):
         add_chart_locator = f"({locator})[{index}]"
         await self._click(add_chart_locator)
+
+    async def click_ordered_add_to_chart(self, attempt: int):
+        for i in range(1, attempt + 1):
+            await self._item_pick(Products.add_btn, i)
+            print(f"Clicking index{i}")
 
     async def click_random_add_to_chart(self, attempt: int):
         total_items = await self._find(Products.container).count()
