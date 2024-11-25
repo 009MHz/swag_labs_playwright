@@ -19,7 +19,6 @@ async def home_page(page):
 class TestSmokeHomePage:
     @pytest.mark.positive
     @pytest.mark.smoke
-    @pytest.mark.sort_control
     @allure.title('The Page Header should be equal with "Swag Labs"')
     @allure.feature("Home/ Header")
     @allure.severity(severity.NORMAL)
