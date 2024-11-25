@@ -32,7 +32,7 @@ jobs:
 
     - name: Generate Credentials data
       run: |
-        echo "${{ secrets.CREDENTIALS_JSON_BASE64 }}" | base64 -d > data/credentials.json
+        echo "${{ secrets.TEST_CREDENTIALS }}" | base64 -d > data/credentials.json
 
     - name: Test execution
       run: |
