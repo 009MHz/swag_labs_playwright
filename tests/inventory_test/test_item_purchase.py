@@ -14,12 +14,11 @@ async def invent(user_auth):
 
 
 @allure.epic("Inventory")
-@allure.story("Smoke Testing: Inventory Page Purchasing")
-@allure.feature("Login")
-@pytest.mark.job_card
+@allure.story("User should be able to interact with item list purchase")
+@allure.feature("Purchase")
+@pytest.mark.positive
+@pytest.mark.smoke
 class TestCheckoutItemMatch:
-    @pytest.mark.positive
-    @pytest.mark.smoke
     @allure.feature("Inventory/ Purchase")
     @allure.title("The item chart should be equal to '2' when user adding 2 items")
     @allure.severity(severity.NORMAL)
@@ -32,8 +31,6 @@ class TestCheckoutItemMatch:
             await invent.cart_item_added_presence()
             await invent.cart_item_counter(attempt)
 
-    @pytest.mark.positive
-    @pytest.mark.smoke
     @allure.feature("Inventory/ Purchase")
     @allure.title("The item chart should be equal to '3' when user adding 3 items")
     @allure.severity(severity.NORMAL)
@@ -46,8 +43,6 @@ class TestCheckoutItemMatch:
             await invent.cart_item_added_presence()
             await invent.cart_item_counter(attempt)
 
-    @pytest.mark.positive
-    @pytest.mark.smoke
     @allure.feature("Inventory/ Purchase")
     @allure.title("The item chart should be equal to '4' when user adding 4 items")
     @allure.severity(severity.NORMAL)
