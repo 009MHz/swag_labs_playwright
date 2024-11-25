@@ -1,6 +1,6 @@
 import os
 import logging
-# from utils.sess_handler import SessionHandler
+from utils.sess_handler import SessionHandler
 
 
 class Config:
@@ -30,7 +30,7 @@ class Config:
         else:
             raise ValueError(f"Unsupported execution type: {mode}")
 
-        # self.session_handler = SessionHandler(self.browser, headless)
+        self.session_handler = SessionHandler(self.browser, headless)
 
     async def context_init(self, storage_state=None, user_type="user"):
         context_options = {
@@ -47,7 +47,7 @@ class Config:
         self.page = await context.new_page()
         return self.page
 
-    async def setup_auth_page(self, auth_mode: str):
+    async def user_mode(self, auth_mode: str):
         context = await self.context_init(storage_state=True, user_type=auth_mode)
         self.page = await context.new_page()
         return self.page
