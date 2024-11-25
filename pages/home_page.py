@@ -10,6 +10,18 @@ class HomePage(BasePage):
     async def open_page(self):
         await self.page.goto(PageInfo.url)
 
+    """Login Action"""
+    async def insert_user_name(self, username: str):
+        await self._type(MainForm.user_name, username)
+        await expect(self._find(MainForm.user_name)).not_to_be_empty()
+
+    async def insert_password(self, password: str):
+        await self._type(MainForm.password, password)
+        await expect(self._find(MainForm.password)).not_to_be_empty()
+
+    async def click_login_button(self):
+        await self._click(MainForm.login_btn)
+
     """Page Header Validation"""
     async def page_title_presence(self):
         await self._look(PageInfo.title)
