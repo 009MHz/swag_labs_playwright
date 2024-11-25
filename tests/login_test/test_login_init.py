@@ -1,5 +1,5 @@
 import pytest
-from pages.home_page import HomePage
+from pages.home_page.home_page import HomePage
 import allure
 from allure import severity_level as severity
 
