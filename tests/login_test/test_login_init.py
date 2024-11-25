@@ -15,7 +15,6 @@ async def home_page(page):
 @allure.epic("Login")
 @allure.story("Smoke Testing: Home Page")
 @allure.feature("Login")
-@pytest.mark.job_card
 class TestLoginAction:
     @pytest.mark.positive
     @pytest.mark.smoke
