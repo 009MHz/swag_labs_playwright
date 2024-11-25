@@ -1,5 +1,5 @@
 import pytest
-from pages.home_page import HomePage
+from pages.home_page.home_page import HomePage
 import allure
 from allure import severity_level as severity
 
@@ -15,10 +15,9 @@ async def home_page(page):
 @allure.epic("Home")
 @allure.story("Smoke Testing: Home Page")
 @allure.feature("Home")
-@pytest.mark.job_card
+@pytest.mark.positive
+@pytest.mark.smoke
 class TestSmokeHomePage:
-    @pytest.mark.positive
-    @pytest.mark.smoke
     @allure.title('The Page Header should be equal with "Swag Labs"')
     @allure.feature("Home/ Header")
     @allure.severity(severity.NORMAL)
@@ -26,8 +25,6 @@ class TestSmokeHomePage:
         with allure.step("Verify the Header Existence"):
             await home_page.page_title_presence()
 
-    @pytest.mark.positive
-    @pytest.mark.smoke
     @allure.feature("Home/ Login Form")
     @allure.title("The Login Form should be exist and accessible")
     @allure.severity(severity.CRITICAL)
@@ -39,8 +36,6 @@ class TestSmokeHomePage:
         with allure.step("3. Validate the Login button"):
             await home_page.login_form_presence()
 
-    @pytest.mark.positive
-    @pytest.mark.smoke
     @allure.feature("Home/ Login Information")
     @allure.title("The Login Information should be displayed and contains the correct information")
     @allure.severity(severity.NORMAL)
