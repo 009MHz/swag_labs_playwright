@@ -25,8 +25,10 @@ class TestCheckoutItemMatch:
     async def test_2_item_purchase(self, invent, attempt=2):
         with allure.step("1. Verify the item chart presence on default state"):
             await invent.cart_empty_presence()
+
         with allure.step("2. Click Add to cart button "):
             await invent.click_ordered_add_to_chart(attempt)
+
         with allure.step("3. Verify the chart state after item added"):
             await invent.cart_item_added_presence()
             await invent.cart_item_counter(attempt)
@@ -37,8 +39,10 @@ class TestCheckoutItemMatch:
     async def test_3_item_purchase(self, invent, attempt=3):
         with allure.step("1. Verify the item chart presence on default state"):
             await invent.cart_empty_presence()
+
         with allure.step("2. Click Add to cart button "):
             await invent.click_ordered_add_to_chart(attempt)
+
         with allure.step("3. Verify the chart state after item added"):
             await invent.cart_item_added_presence()
             await invent.cart_item_counter(attempt)
@@ -49,8 +53,10 @@ class TestCheckoutItemMatch:
     async def test_4_item_purchase(self, invent, attempt=4):
         with allure.step("1. Verify the item chart presence on default state"):
             await invent.cart_empty_presence()
+
         with allure.step("2. Click Add to cart button"):
             await invent.click_ordered_add_to_chart(attempt)
+
         with allure.step("3. Verify the chart state after item added"):
             await invent.cart_item_added_presence()
             await invent.cart_item_counter(attempt)
