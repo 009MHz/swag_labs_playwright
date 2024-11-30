@@ -1,6 +1,0 @@
-Clicking index1
-Clicking index2
-Clicking index3
-Clicking index1
-Clicking index2
-Clicking index3

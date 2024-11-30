@@ -1,4 +1,0 @@
-INFO:utils.login_caller:Opening Login Page
-INFO:utils.login_caller:Providing username type: standard_user
-INFO:utils.login_caller:Providing Valid Password
-INFO:root:Login Success for standard, Creating the session file . . .

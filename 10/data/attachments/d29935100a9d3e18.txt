@@ -1,4 +1,0 @@
-INFO     utils.login_caller:login_caller.py:14 Opening Login Page
-INFO     utils.login_caller:login_caller.py:16 Providing username type: standard_user
-INFO     utils.login_caller:login_caller.py:18 Providing Valid Password
-INFO     root:sess_handler.py:63 Login Success for standard, Creating the session file . . .
