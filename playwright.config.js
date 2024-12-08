@@ -13,6 +13,6 @@ module.exports = defineConfig({
     },
     reporter: [
         ['list'],
-        ['allure-playwright']
+        ['allure-playwright', { outputFolder: 'reports' }]
     ],
 });
