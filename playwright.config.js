@@ -13,6 +13,7 @@ module.exports = defineConfig({
     },
     reporter: [
         ['list'],
-        ['allure-playwright', { outputFolder: 'reports' }]
+        ['allure-playwright',
+            {resultsDir: 'reports', clean: true,}],
     ],
 });
