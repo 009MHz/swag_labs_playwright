@@ -176,3 +176,4 @@ reports
 tests/reports
 tests/resume_builder_feature/smoke/data/
 /node_modules/
+/reports/
