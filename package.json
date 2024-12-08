@@ -1,0 +1,19 @@
+{
+  "name": "swag_playwright",
+  "version": "1.0.0",
+  "description": "1. **Set up JavaScript environment:**\r    - Install Node.js and npm.\r    - Install Playwright using npm.\r    - Install Allure Command Line.",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "allure": "^0.0.0",
+    "playwright": "^1.49.0"
+  }
+}

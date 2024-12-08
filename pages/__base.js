@@ -1,4 +1,4 @@
-class BasePage {
+class __base {
     constructor(page) {
         this.page = page;
     }
@@ -82,4 +82,4 @@ class BasePage {
     }
 }
 
-module.exports = BasePage;
+module.exports = __base;
