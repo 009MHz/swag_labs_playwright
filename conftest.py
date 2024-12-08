@@ -18,6 +18,7 @@ def pytest_configure(config):
     os.environ["env"] = config.getoption('env')
     os.environ["mode"] = config.getoption('mode') or 'local'
     os.environ["headless"] = str(config.getoption('headless'))
+    os.environ["screenshot"] = os.environ.get("screenshot", "off").lower()
 
 
 @pytest.fixture()
@@ -70,7 +71,7 @@ def pytest_runtest_makereport(item, call):
     outcome = yield
     rep = outcome.get_result()
 
-    if rep.when == "call":  # if rep.when == "call" and rep.failed: # config on fail only
+    if rep.when == "call" and rep.failed: # config on fail only | if rep.when == "call":
         screenshot_path = os.path.join("reports/screenshots", f"{item.name}.png")
         os.makedirs(os.path.dirname(screenshot_path), exist_ok=True)
 

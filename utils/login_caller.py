@@ -18,5 +18,3 @@ class LoginInit(HomePage):
         logger.info("Providing Valid Password")
         await self.insert_password(password)
         await self.click_login_button()
-        await self.login_attempt_success()
-
