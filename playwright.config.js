@@ -2,7 +2,7 @@ const { defineConfig } = require('@playwright/test');
 
 module.exports = defineConfig({
     timeout: 30000,
-    retries: 2,
+    retries: 1,
     testDir: './tests',
     use: {
         browserName: 'chromium',
@@ -11,4 +11,8 @@ module.exports = defineConfig({
         screenshot: 'on',
         video: 'retain-on-failure',
     },
+    reporter: [
+        ['list'],
+        ['allure-playwright']
+    ],
 });
