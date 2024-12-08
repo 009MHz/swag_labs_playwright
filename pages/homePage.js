@@ -1,9 +1,9 @@
-const BasePage = require("./__base");
+const __base = require("./__base");
 const { PageInfo, MainForm } = require("../elements/__home");
 const {expect} = require("playwright/test");
 
 
-class HomePage extends BasePage {
+class HomePage extends __base {
     constructor(page) {
         super(page);
         this.page = page;
