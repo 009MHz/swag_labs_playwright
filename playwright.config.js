@@ -1,4 +1,5 @@
 const { defineConfig } = require('@playwright/test');
+const {PageScreenshotOptions} = require("playwright-core");
 
 module.exports = defineConfig({
     timeout: 30000,
@@ -8,7 +9,10 @@ module.exports = defineConfig({
         browserName: 'chromium',
         headless: true,
         viewport: { width: 1280, height: 720 },
-        screenshot: 'on',
+        screenshot: {
+            mode: "on",
+            fullPage: true
+        },
         video: 'retain-on-failure',
     },
     reporter: [
