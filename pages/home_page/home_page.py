@@ -28,24 +28,18 @@ class HomePage(BasePage):
         await expect(self._find(PageInfo.title)).to_be_visible()
         await expect(self._find(PageInfo.title)).to_have_text("Swag Labs")
 
-    async def login_form_presence(self):
-        await self._look(PageInfo.main_form)
-        await expect(self._find(PageInfo.title)).to_be_visible()
-
-    async def user_input_presence(self):
+    async def user_name_input_presence(self):
         await self._touch(MainForm.user_name)
         await expect(self._find(MainForm.user_name)).to_be_empty()
         await expect(self._find(MainForm.user_name)).to_have_attribute("placeholder", "Username")
+
+    async def password_input_presence(self):
+        await self._touch(MainForm.password_xpath)
+        await expect(self._find(MainForm.password_xpath)).to_be_empty()
+        await expect(self._find(MainForm.password_xpath)).to_have_attribute("placeholder", "Password")
 
     async def login_button_presence(self):
         await self._look(MainForm.login_btn)
         await expect(self._find(MainForm.login_btn)).to_be_enabled()
         await expect(self._find(MainForm.login_btn)).to_have_attribute("value", "Login")
-        
-    async def allowed_pass_title_presence(self):
-        await self._look(FormInfo.pass_header)
-        await expect(self._find(FormInfo.pass_header)).to_have_text("Password for all users:")
 
-    async def allowed_pass_content_presence(self):
-        await self._look(FormInfo.pass_form)
-        await expect(self._find(FormInfo.pass_form)).to_contain_text("secret_sauce")
