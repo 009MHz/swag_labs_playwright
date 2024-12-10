@@ -3,8 +3,10 @@ const {PageScreenshotOptions} = require("playwright-core");
 
 module.exports = defineConfig({
     timeout: 30000,
-    retries: 1,
-    testDir: './tests',
+    retries: 2,
+    testDir: 'tests',
+    fullyParallel: true,
+
     use: {
         browserName: 'chromium',
         headless: true,
