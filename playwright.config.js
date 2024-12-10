@@ -8,14 +8,14 @@ module.exports = defineConfig({
 
     use: {
         headless: true,
-        viewport: null,
+        viewport: process.env.HEADLESS === 'true' ? { width: 1920, height: 1080 } : null,
         screenshot: {
             mode: 'on',
             fullPage: true,
         },
         video: 'retain-on-failure',
         launchOptions: {
-            args: ['--start-maximized'],
+            args: process.env.HEADLESS === 'true' ? [] : ['--start-maximized'],
         },
     },
     projects: [
@@ -26,7 +26,6 @@ module.exports = defineConfig({
         {
             name: 'firefox',
             use: { browserName: 'firefox' },
-
         },
         {
             name: 'webkit',
