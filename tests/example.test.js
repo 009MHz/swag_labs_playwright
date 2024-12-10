@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
 
-test.describe('Playwright Test Suite', () => {
+test.describe('Playwright Test Example', () => {
 
     test('Main Page should contain "Playwright" title', async ({ page }) => {
         await page.goto('https://playwright.dev/');
