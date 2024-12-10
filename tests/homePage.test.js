@@ -1,7 +1,6 @@
-const { test, expect } = require("@playwright/test");
+const { test} = require("@playwright/test");
 const HomePage = require("../pages/homePage");
 
-/** Test Fixtures */
 test.describe("Home Page", () => {
     let homePage;
 
