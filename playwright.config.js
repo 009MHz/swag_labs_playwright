@@ -5,6 +5,7 @@ module.exports = defineConfig({
     retries: 2,
     testDir: 'tests',
     fullyParallel: true,
+    globalSetup: require.resolve('./global-setup.js'),
 
     use: {
         headless: true,
