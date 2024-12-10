@@ -6,18 +6,14 @@ module.exports = defineConfig({
     testDir: 'tests',
     fullyParallel: true,
 
+    globalSetup: require.resolve('./global-setup'),
+    globalTeardown: require.resolve('./global-teardown'),
+
     use: {
-        headless: true,
-        viewport: process.env.HEADLESS === 'true' ? { width: 1920, height: 1080 } : null,
-        screenshot: {
-            mode: 'on',
-            fullPage: true,
-        },
+        screenshot: 'on',
         video: 'retain-on-failure',
-        launchOptions: {
-            args: process.env.HEADLESS === 'true' ? [] : ['--start-maximized'],
-        },
     },
+
     projects: [
         {
             name: 'chrome',
@@ -32,6 +28,7 @@ module.exports = defineConfig({
             use: { browserName: 'webkit' },
         },
     ],
+
     reporter: process.env.SKIP_REPORT
         ? [['list']]
         : [

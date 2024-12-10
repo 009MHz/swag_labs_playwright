@@ -31,7 +31,7 @@ jobs:
 
     - name: Test execution
       run: |
-        npx playwright test --reporter=allure-playwright
+        ENV=pipeline npx playwright test --reporter=allure-playwright
 
     - name: Load test report history
       uses: actions/checkout@v4
