@@ -1,5 +1,4 @@
 const { defineConfig } = require('@playwright/test');
-const {PageScreenshotOptions} = require("playwright-core");
 
 module.exports = defineConfig({
     timeout: 30000,
@@ -8,18 +7,36 @@ module.exports = defineConfig({
     fullyParallel: true,
 
     use: {
-        browserName: 'chromium',
         headless: true,
-        viewport: { width: 1280, height: 720 },
+        viewport: null,
         screenshot: {
-            mode: "on",
-            fullPage: true
+            mode: 'on',
+            fullPage: true,
         },
         video: 'retain-on-failure',
+        launchOptions: {
+            args: ['--start-maximized'],
+        },
     },
-    reporter: [
-        ['list'],
-        ['allure-playwright',
-            {resultsDir: 'reports', clean: true,}],
+    projects: [
+        {
+            name: 'chrome',
+            use: { browserName: 'chromium' },
+        },
+        {
+            name: 'firefox',
+            use: { browserName: 'firefox' },
+
+        },
+        {
+            name: 'webkit',
+            use: { browserName: 'webkit' },
+        },
     ],
+    reporter: process.env.SKIP_REPORT
+        ? [['list']]
+        : [
+              ['list'],
+              ['allure-playwright', { resultsDir: 'reports', clean: true }],
+          ],
 });
