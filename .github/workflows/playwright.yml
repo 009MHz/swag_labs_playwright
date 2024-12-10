@@ -31,7 +31,7 @@ jobs:
 
     - name: Test execution
       run: |
-        npx playwright test --project=allure-report --reporter=line,allure-playwright
+        npx playwright test --reporter=allure-playwright
       env:
         ENV: test
         MODE: pipeline
