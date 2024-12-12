@@ -156,8 +156,8 @@ class InventPage(BasePage):
 
     # Todo 3: Total price vs item calculator verification
     async def checkout_price_validator(self):
-        # Todo 3a: Collect the result from 2f
-        # Todo 3b: Compare the result with 3c
+        # Todo 3a: Collect the result from single_checkout_calculation function
+        # Todo 3b: Compare the result with all_item_total_retriever
         # Todo 3c: Create the assertion for the price should be matched
         pass
 
