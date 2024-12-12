@@ -55,11 +55,11 @@ class TestPurchasingFlow:
             await invent.buy_info_continue()
             await invent.buy_preview_page_section_presence()
 
-        # # Todo : Validate the total result vs single item calculation
+        # Todo : Validate the total result vs single item calculation
         # with allure.step("7. Calculate the price before completing the checkout"):
         #     await invent.single_checkout_calculation()
         #     await invent.all_item_total_retriever()
-        #     await invent.checkout_price_calculator()
+        #     await invent.checkout_price_validator()
 
         with allure.step("8. Click the 'Finish' button"):
             await invent.buy_preview_click_finish()
