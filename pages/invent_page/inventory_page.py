@@ -139,6 +139,24 @@ class InventPage(BasePage):
         await expect(self._find(BuyPreview.finish_btn)).to_be_enabled()
         await expect(self._find(BuyPreview.finish_btn)).to_have_text("Finish")
 
+    # Todo 1: Item calculator before checkout
+        # Todo 1a: Retrieve Price Text from the carousel
+        # Todo 1b: Trim the text and collect the number only
+        # Todo 1c: Add the number into a list/array
+        # Todo 1d: Summarize/add the collected number inside array
+        # Todo 1e: Convert it into string
+        # Todo 1f: Add the '$' sign and return the result
+
+    # Todo 2: Price total retriever
+        # Todo 2a: Collect the Item total under Price Total section
+        # Todo 2b: Trim the content
+        # Todo 2c: Collect the result with same format with previous returned data type
+
+    # Todo 3: Total price vs item calculator verification
+        # Todo 3a: Collect the result from 2f
+        # Todo 3b: Compare the result with 3c
+        # Todo 3c: Create the assertion for the price should be matched
+
     """Checkout Complete"""
     async def complete_page_section_presence(self):
         await self._look(BuyComplete.section_title)

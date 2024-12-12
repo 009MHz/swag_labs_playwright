@@ -30,8 +30,8 @@ class TestPurchasingFlow:
     @allure.severity(severity.CRITICAL)
     async def test_complex_purchase(self, invent):
         with allure.step("1. Click Add to cart on the random item "):
-            await invent.click_random_add_to_chart(2)
-            await invent.cart_item_counter(2)
+            await invent.click_random_add_to_chart(3)
+            await invent.cart_item_counter(3)
 
         with allure.step("2. Go to Your Chart Page"):
             await invent.click_chart_icon()
@@ -40,6 +40,7 @@ class TestPurchasingFlow:
 
         with allure.step("3. Remove a random item"):
             await invent.cart_remove_random_item()
+            # await invent.calculate_current_price()
 
         with allure.step("4. Click on the checkout button"):
             await invent.cart_checkout_click()
@@ -54,6 +55,12 @@ class TestPurchasingFlow:
             await invent.buy_info_continue()
             await invent.buy_preview_page_section_presence()
 
-        with allure.step("7. Click the 'Finish' button"):
+        # # Todo : Validate the total result vs single item calculation
+        # with allure.step("7. Calculate the price before completing the checkout"):
+        #     await invent.single_checkout_calculation()
+        #     await invent.all_item_total_retriever()
+        #     await invent.checkout_price_calculator()
+
+        with allure.step("8. Click the 'Finish' button"):
             await invent.buy_preview_click_finish()
             await invent.complete_page_section_presence()
