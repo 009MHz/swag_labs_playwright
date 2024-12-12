@@ -60,6 +60,7 @@ class BuyPreview:
     item_name = "//div[@class='inventory_item_name']"
     item_info = "//div[@class='inventory_item_desc']"
     item_price = "//div[@class='inventory_item_price']"
+    item_total = "div[data-test='subtotal-label']"
     summary_info = ".summary_info"
     cancel_btn = "#cancel"
     finish_btn = "#finish"
