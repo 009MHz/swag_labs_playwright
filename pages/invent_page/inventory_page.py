@@ -139,25 +139,27 @@ class InventPage(BasePage):
         await expect(self._find(BuyPreview.finish_btn)).to_be_enabled()
         await expect(self._find(BuyPreview.finish_btn)).to_have_text("Finish")
 
+    # Todo 1: Item calculator before checkout
     async def single_checkout_calculation(self):
-        total_price = 0.0
-        total_goods = await self._find(YourCart.item_price).count()
-        for item_order in range(1, total_goods+1):
-            mod_locators = f"({YourCart.item_price})[{item_order}]"
-            current_price = await self._find(mod_locators).text_content()
-            formatted_price = current_price.split('$')[-1].strip()
-            total_price += float(formatted_price)
-        return f"${total_price:.2f}"
+        # Todo 1a: Retrieve Price Text from the carousel
+        # Todo 1b: Trim the text and collect the number only
+        # Todo 1c: Add the number into current calculation
+        # Todo 1e: Add the '$' sign and return the result
+        pass
 
+    # Todo 2: Price total retriever
     async def all_item_total_retriever(self):
-        raw_price = await self._find(BuyPreview.item_total).text_content()
-        formatted_price = raw_price.split(':')[-1].strip()
-        return formatted_price
+        # Todo 2a: Collect the Item total under Price Total section
+        # Todo 2b: Trim the content
+        # Todo 2c: Collect the result with same format with previous returned data type
+        pass
 
+    # Todo 3: Total price vs item calculator verification
     async def checkout_price_validator(self):
-        single_item_calculation = await self.single_checkout_calculation()
-        total_price = await self.all_item_total_retriever()
-        assert total_price == single_item_calculation, f"The single item price calculation doesn't match with the total price"
+        # Todo 3a: Collect the result from 2f
+        # Todo 3b: Compare the result with 3c
+        # Todo 3c: Create the assertion for the price should be matched
+        pass
 
     """Checkout Complete"""
     async def complete_page_section_presence(self):
